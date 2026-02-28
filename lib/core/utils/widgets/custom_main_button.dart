@@ -21,13 +21,13 @@ class CustomMainButton extends StatelessWidget {
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           backgroundColor: AppColors.primary,
-          foregroundColor: Colors.white, // لون تأثير الضغطة (Splash)
+          foregroundColor: Colors.white, 
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15),
           ),
           elevation: 0,
         ),
-        onPressed: onPressed, // تأكدي أن القيمة الممرة هنا ليست null في الصفحة الأساسية
+        onPressed: onPressed, 
         child: Stack(
           alignment: Alignment.center,
           children: [
@@ -36,14 +36,13 @@ class CustomMainButton extends StatelessWidget {
               style: const TextStyle(
                 color: Colors.white,
                 fontSize: 16,
-                fontWeight: FontWeight.w600, // خليناه أسمك شوية عشان يظهر زي الفيجما
+                fontWeight: FontWeight.w600,
                 letterSpacing: 1,
               ),
             ),
             if (hasIcon)
               Align(
                 alignment: Alignment.centerRight,
-                // IgnorePointer هو الحل: بيخلي الأيقونة متسحبش الضغطة لنفسها
                 child: IgnorePointer(
                   child: Container(
                     padding: const EdgeInsets.all(5),

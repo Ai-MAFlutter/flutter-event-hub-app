@@ -6,7 +6,7 @@ class InviteFriendSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // قائمة بيانات تجريبية بناءً على الفيجما
+    
     final List<Map<String, String>> friends = [
       {"name": "Alex Lee", "followers": "2k Followers", "image": AppAssets.imagenot1},
       {"name": "Micheal Ulasi", "followers": "56 Followers", "image": AppAssets.imagenot2},
@@ -32,7 +32,7 @@ class InviteFriendSheet extends StatelessWidget {
           const SizedBox(height: 25),
           const Text("Invite Friend", style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Color(0xFF120D26))),
           const SizedBox(height: 15),
-          // حقل البحث
+          
           TextField(
             decoration: InputDecoration(
               hintText: "Search",
@@ -43,7 +43,7 @@ class InviteFriendSheet extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 20),
-          // قائمة الأصدقاء
+          
           SizedBox(
             height: 350,
             child: ListView.builder(
@@ -62,7 +62,7 @@ class InviteFriendSheet extends StatelessWidget {
               },
             ),
           ),
-          // زرار Invite
+          
           Container(
             width: double.infinity,
             padding: const EdgeInsets.symmetric(vertical: 15),

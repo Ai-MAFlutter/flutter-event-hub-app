@@ -2,7 +2,7 @@ import 'package:event_hub_app/core/utils/app_colors.dart';
 import 'package:event_hub_app/features/splash_screen/view/auth/view/sign_in_view.dart';
 import 'package:event_hub_app/features/splash_screen/view/onboarding/view/models/onboarding_model.dart';
 import 'package:flutter/material.dart';
-// تأكدي من استيراد صفحة الـ Sign In لتتمكني من الانتقال إليها
+
  
 
 class OnboardingView extends StatefulWidget {
@@ -21,7 +21,7 @@ class _OnboardingViewState extends State<OnboardingView> {
     return Scaffold(
       body: Stack(
         children: [
-          // 1. عرض الصور (بتاخد الجزء العلوي)
+         
           PageView.builder(
             controller: _pageController,
             itemCount: onboardingContents.length,
@@ -37,20 +37,20 @@ class _OnboardingViewState extends State<OnboardingView> {
                       width: double.infinity,
                     ),
                   ),
-                  const Spacer(flex: 4), // مكان فاضي للحاوية الزرقاء
+                  const Spacer(flex: 4), 
                 ],
               );
             },
           ),
           
-          // 2. الحاوية الزرقاء (موجودة في الأسفل)
+          
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
               height: MediaQuery.of(context).size.height * 0.42, 
               padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 30),
               decoration: const BoxDecoration(
-                color: AppColors.primary, // اللون الأزرق من الـ Utils بتاعك
+                color: AppColors.primary, 
                 borderRadius: BorderRadius.vertical(top: Radius.circular(45)),
               ),
               child: Column(
@@ -67,7 +67,7 @@ class _OnboardingViewState extends State<OnboardingView> {
                     style: const TextStyle(color: Colors.white70, fontSize: 15),
                   ),
                   const Spacer(),
-                  // زرار Skip و Next والنقط
+                  
                   _buildNavigationRow(),
                 ],
               ),
@@ -82,7 +82,7 @@ class _OnboardingViewState extends State<OnboardingView> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        // زرار الـ Skip: ينقل المستخدم فوراً لصفحة الـ Sign In
+        
         TextButton(
           onPressed: () {
             Navigator.pushReplacement(
@@ -93,7 +93,7 @@ class _OnboardingViewState extends State<OnboardingView> {
           child: const Text('Skip', style: TextStyle(color: Colors.white70))
         ),
         
-        // النقط (Indicator)
+       
         Row(
           children: List.generate(3, (index) => Container(
             margin: const EdgeInsets.all(3),
@@ -105,17 +105,17 @@ class _OnboardingViewState extends State<OnboardingView> {
           )),
         ),
         
-        // زرار الـ Next أو Done
+       
         TextButton(
           onPressed: () {
             if (_currentIndex == onboardingContents.length - 1) {
-              // إذا كنا في الصفحة الأخيرة (Done): ننتقل لصفحة الـ Sign In
+             
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(builder: (context) => const SignInView()),
               );
             } else {
-              // إذا كنا في الصفحات الأولى: ننتقل للصفحة التالية في الـ Onboarding
+              
               _pageController.nextPage(
                 duration: const Duration(milliseconds: 300), 
                 curve: Curves.easeInOut

@@ -1,6 +1,5 @@
 import 'package:event_hub_app/core/utils/app_assets.dart';
 import 'package:flutter/material.dart';
-// تأكدي من مسارات الـ Widgets الخاصة بكِ
 import 'package:event_hub_app/core/utils/widgets/custom_main_button.dart';
 import 'package:event_hub_app/core/utils/widgets/custom_text_field.dart';
 
@@ -19,7 +18,7 @@ class ResetPasswordView extends StatelessWidget {
           onPressed: () => Navigator.pop(context),
         ),
       ),
-      body: SingleChildScrollView( // حل مشكلة الـ Overflow عند ظهور الكيبورد
+      body: SingleChildScrollView( 
         padding: const EdgeInsets.symmetric(horizontal: 30),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

@@ -11,10 +11,10 @@ class MapView extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          // 1. الخريطة التفاعلية (OpenStreetMap)
+          
           FlutterMap(
             options: const MapOptions(
-              initialCenter: LatLng(37.7749, -122.4194), // سان فرانسيسكو كمثال
+              initialCenter: LatLng(37.7749, -122.4194), 
               initialZoom: 13.0,
             ),
             children: [
@@ -22,19 +22,18 @@ class MapView extends StatelessWidget {
                 urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
                 userAgentPackageName: 'com.example.app',
               ),
-              // توزيع الأيقونات (Markers) في أماكن مختلفة
+              
               MarkerLayer(
                 markers: [
                   _buildRealMarker(const LatLng(37.7880, -122.4050), AppAssets.food, const Color(0xFF29D697)),
                   _buildRealMarker(const LatLng(37.7810, -122.4350), AppAssets.music, const Color(0xFF5669FF)),
-                  //_buildRealMarker(const LatLng(37.7700, -122.3950), AppAssets.art, const Color(0xFF39C3F2)),
                   _buildRealMarker(const LatLng(37.7580, -122.4200), AppAssets.sports, const Color(0xFFFF5656)),
                 ],
               ),
             ],
           ),
 
-          // 2. الجزء العلوي: بار البحث وأيقونة البوصلة
+          
           SafeArea(
             child: Column(
               children: [
@@ -46,14 +45,14 @@ class MapView extends StatelessWidget {
             ),
           ),
 
-          // 3. الجزء السفلي: زر الفلتر وكارت الإيفنت
+        
           _buildBottomSection(),
         ],
       ),
     );
   }
 
-  // ميثود بناء دبابيس الخريطة (Markers)
+  
   Marker _buildRealMarker(LatLng point, String asset, Color color) {
     return Marker(
       point: point,
@@ -71,16 +70,16 @@ class MapView extends StatelessWidget {
     );
   }
 
-  // بار البحث العلوي (محدث بأيقونات الفيجما)
+  
   Widget _buildTopSearchRow(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Row(
         children: [
-          // زر الرجوع
+         
           _buildCircularIconFromAsset(AppAssets.arrowback, () => Navigator.pop(context), iconColor: Colors.black),
           const SizedBox(width: 10),
-          // حقل البحث
+          
           Expanded(
             child: Container(
               height: 50,
@@ -108,14 +107,14 @@ class MapView extends StatelessWidget {
             ),
           ),
           const SizedBox(width: 10),
-          // أيقونة البوصلة (علوية يمين)
+          
           _buildCircularIconFromAsset(AppAssets.locationmarker, () {}, iconColor: const Color(0xFF5669FF)),
         ],
       ),
     );
   }
 
-  // قائمة التصنيفات العلوية
+  
   Widget _buildCategoriesList() {
     return SizedBox(
       height: 45,
@@ -131,7 +130,7 @@ class MapView extends StatelessWidget {
     );
   }
 
-  // الكارت السفلي وزر الفلتر
+  
   Widget _buildBottomSection() {
     return Align(
       alignment: Alignment.bottomCenter,
@@ -139,7 +138,7 @@ class MapView extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
-          // زر الفلتر الدائري الأزرق
+         
           Padding(
             padding: const EdgeInsets.only(right: 20, bottom: 15),
             child: FloatingActionButton(
@@ -149,7 +148,7 @@ class MapView extends StatelessWidget {
               child: Image.asset(AppAssets.filterIcon, width: 24, color: Colors.white),
             ),
           ),
-          // كارت الإيفنت
+          
           Container(
             margin: const EdgeInsets.fromLTRB(20, 0, 20, 30),
             padding: const EdgeInsets.all(12),
@@ -175,7 +174,7 @@ class MapView extends StatelessWidget {
                       const SizedBox(height: 6),
                       Row(
                         children: [
-                          // أيقونة الموقع الصغيرة من الفيجما
+                          
                           Image.asset(AppAssets.locationmarker, width: 14, color: Colors.grey),
                           const SizedBox(width: 4),
                           const Text(" Radius Gallery • Santa Cruz, CA", style: TextStyle(color: Colors.grey, fontSize: 11)),
@@ -193,7 +192,7 @@ class MapView extends StatelessWidget {
     );
   }
 
-  // دالة مساعدة للأزرار الدائرية
+ 
   Widget _buildCircularIconFromAsset(String asset, VoidCallback onTap, {required Color iconColor}) {
     return Container(
       height: 50, width: 50,
@@ -205,7 +204,7 @@ class MapView extends StatelessWidget {
     );
   }
 
-  // دالة مساعدة لعناصر التصنيفات
+  
   Widget _buildCategoryItem(String label, String iconAsset, Color color) {
     return Container(
       margin: const EdgeInsets.only(right: 12),

@@ -8,7 +8,7 @@ class OnboardingModel {
 
 List<OnboardingModel> onboardingContents = [
   OnboardingModel(
-    image: 'assets/images/image2.png', // صوري الـ Onboarding من الفيجما وحطي أسماءها هنا
+    image: 'assets/images/image2.png', 
     title: 'Explore Upcoming and Nearby Events',
     description: 'In publishing and graphic design, Lorem ipsum is a placeholder text commonly.',
   ),

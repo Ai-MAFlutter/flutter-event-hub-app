@@ -12,7 +12,7 @@ class EmptyEventsScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset(AppAssets.noeventimage, width: 200), // صورة التقويم من الفيجما
+              Image.asset(AppAssets.noeventimage, width: 200), 
               const SizedBox(height: 40),
               const Text(
                 "No Upcoming Event",
@@ -27,7 +27,7 @@ class EmptyEventsScreen extends StatelessWidget {
             ],
           ),
         ),
-        // الزر الأزرق الموجود في أسفل التصميم
+        
         Positioned(
           bottom: 40,
           left: 50,

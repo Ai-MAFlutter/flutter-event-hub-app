@@ -2,9 +2,6 @@ import 'package:event_hub_app/core/utils/app_colors.dart';
 import 'package:event_hub_app/core/utils/widgets/custom_main_button.dart';
 import 'package:event_hub_app/features/splash_screen/view/home/views/home_view.dart';
 import 'package:flutter/material.dart';
-
-// تأكدي من مسار صفحة الهوم عندك، غالباً هيكون كدة:
-
 class VerificationView extends StatelessWidget {
   const VerificationView({super.key});
 
@@ -22,7 +19,7 @@ class VerificationView extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 30),
-        child: SingleChildScrollView( // أضفت دي عشان لو الكيبورد فتحت ميعملش Overflow
+        child: SingleChildScrollView( 
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -39,8 +36,6 @@ class VerificationView extends StatelessWidget {
                 style: TextStyle(color: Color(0xFF747688), fontSize: 15),
               ),
               const SizedBox(height: 30),
-
-              // صف مربعات الـ OTP
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -57,7 +52,7 @@ class VerificationView extends StatelessWidget {
                 text: 'CONTINUE',
                 hasIcon: true,
                 onPressed: () {
-                  // الانتقال لصفحة الهوم واستبدال الصفحة الحالية
+                  
                   Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(builder: (context) => const HomeView()),
@@ -89,7 +84,7 @@ class VerificationView extends StatelessWidget {
     );
   }
 
-  // Widget المربع الواحد للـ OTP
+  
   Widget _buildOTPBox(BuildContext context,
       {bool first = false, bool last = false}) {
     return Container(
@@ -103,10 +98,10 @@ class VerificationView extends StatelessWidget {
         autofocus: first,
         onChanged: (value) {
           if (value.length == 1 && !last) {
-            FocusScope.of(context).nextFocus(); // ينتقل للمربع اللي بعده
+            FocusScope.of(context).nextFocus(); 
           }
           if (value.isEmpty && !first) {
-            FocusScope.of(context).previousFocus(); // يرجع للمربع اللي قبله
+            FocusScope.of(context).previousFocus(); 
           }
         },
         textAlign: TextAlign.center,

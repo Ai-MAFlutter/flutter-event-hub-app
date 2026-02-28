@@ -33,25 +33,25 @@ class NotificationsView extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.symmetric(vertical: 10),
         children: [
-          // 1. تنبيه بدعوة (مع أزرار)
+          
           _buildNotificationItem(
             name: "David Silbia",
             actionText: "Invite Jo Malone London’s Mother’s",
             time: "Just now",
-            image: AppAssets.imagenot1, // استبدليها بـ AppAssets.imageprofile لو ده اسم المتغير عندك
+            image: AppAssets.imagenot1, 
             hasButtons: true,
           ),
           SizedBox(height: 20,),
-          // 2. تنبيه متابعة (عادي)
+          
           _buildNotificationItem(
             name: "Adnan Safi",
             actionText: "Started following you",
             time: "5 min ago",
-            image: AppAssets.imagenot2, // صورة افتراضية للمثال
+            image: AppAssets.imagenot2, 
             hasButtons: false,
           ),
           SizedBox(height: 20,),
-          // 3. تنبيه دعوة إيفنت جاز
+          
           _buildNotificationItem(
             name: "Joan Baker",
             actionText: "Invite A virtual Evening of Smooth Jazz",
@@ -60,7 +60,7 @@ class NotificationsView extends StatelessWidget {
             hasButtons: true,
           ),
           SizedBox(height: 20,),
-          // 4. تنبيه Like
+          
           _buildNotificationItem(
             name: "Ronald C. Kinch",
             actionText: "Like you events",
@@ -69,7 +69,7 @@ class NotificationsView extends StatelessWidget {
             hasButtons: false,
           ),
           SizedBox(height: 20,),
-          // 5. تنبيه Join
+          
           _buildNotificationItem(
             name: "Clara Tolson",
             actionText: "Join your Event Gala Music Festival",

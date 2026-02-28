@@ -15,7 +15,7 @@ class HomeDrawer extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // 1. بروفايل المستخدم (الصورة والاسم)
+              
               const CircleAvatar(
                 radius: 35,
                 backgroundImage: AssetImage(AppAssets.profileImage),
@@ -31,7 +31,7 @@ class HomeDrawer extends StatelessWidget {
               ),
               const SizedBox(height: 40), 
 
-              // 2. قائمة العناصر باستخدام ميثود _drawerItem
+              
               Expanded(
                 child: ListView(
                   padding: EdgeInsets.zero,
@@ -46,7 +46,7 @@ class HomeDrawer extends StatelessWidget {
                       context,
                       iconPath: AppAssets.messageIcon,
                       text: 'Message',
-                      badgeCount: 3, // الرقم يظهر فوق الأيقونة هنا
+                      badgeCount: 3, 
                       onTap: () => _navigateTo(context, 'Message'),
                     ),
                     _drawerItem(
@@ -94,7 +94,7 @@ class HomeDrawer extends StatelessWidget {
                 ),
               ),
 
-              // 3. زر الترقية (Upgrade Pro) في الأسفل
+              
               Container(
                 margin: const EdgeInsets.only(bottom: 10),
                 padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
@@ -125,7 +125,7 @@ class HomeDrawer extends StatelessWidget {
     );
   }
 
-  // ميثود بناء العنصر الواحد مع دعم الـ Badge فوق الأيقونة
+  
   Widget _drawerItem(
     BuildContext context, {
     required String iconPath,
@@ -146,7 +146,7 @@ class HomeDrawer extends StatelessWidget {
                   iconPath,
                   width: 25,
                   height: 25,
-                  color: const Color(0xFF747688), // اللون الرمادي للأيقونات
+                  color: const Color(0xFF747688), 
                 ),
                 if (badgeCount != null)
                   Positioned(
@@ -155,7 +155,7 @@ class HomeDrawer extends StatelessWidget {
                     child: Container(
                       padding: const EdgeInsets.all(2),
                       decoration: BoxDecoration(
-                        color: const Color(0xFFFF8D5D), // اللون البرتقالي
+                        color: const Color(0xFFFF8D5D), 
                         shape: BoxShape.circle,
                         border: Border.all(color: Colors.white, width: 1.5),
                       ),
@@ -200,7 +200,7 @@ class HomeDrawer extends StatelessWidget {
   }
 }
 
-// كلاس الشاشة المؤقتة لمنع الأخطاء
+
 class PlaceholderScreen extends StatelessWidget {
   final String title;
   const PlaceholderScreen({super.key, required this.title});

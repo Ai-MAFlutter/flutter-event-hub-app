@@ -9,7 +9,7 @@ class FilterView extends StatefulWidget {
 }
 
 class _FilterViewState extends State<FilterView> {
-  // متغيرات لتخزين الاختيارات
+  
   String selectedCategory = "Sports";
   String selectedTime = "Today";
   RangeValues _currentRangeValues = const RangeValues(20, 80);
@@ -37,28 +37,27 @@ class _FilterViewState extends State<FilterView> {
           children: [
             const SizedBox(height: 25),
             
-            // 1. قسم التصنيفات
+            
             _buildSectionTitle("Category"),
             const SizedBox(height: 15),
             _buildCategories(),
             
             const SizedBox(height: 35),
             
-            // 2. قسم التاريخ والوقت
+           
             _buildSectionTitle("Time & Date"),
             const SizedBox(height: 15),
             _buildTimeFilters(),
             
             const SizedBox(height: 35),
             
-            // 3. قسم اختيار الموقع
+            
             _buildSectionTitle("Location"),
             const SizedBox(height: 15),
             _buildLocationSelector(),
             
             const SizedBox(height: 35),
             
-            // 4. قسم نطاق السعر (Price Range)
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -73,7 +72,6 @@ class _FilterViewState extends State<FilterView> {
             
             const SizedBox(height: 50),
             
-            // 5. أزرار التحكم (Reset & Apply)
             _buildActionButtons(),
             const SizedBox(height: 20),
           ],
@@ -89,7 +87,7 @@ class _FilterViewState extends State<FilterView> {
     );
   }
 
-  // ويدجت التصنيفات الدائرية
+  
   Widget _buildCategories() {
     List<Map<String, dynamic>> categories = [
       {"name": "Sports", "icon": AppAssets.sports, "color": const Color(0xFFF0635A)},
@@ -136,7 +134,7 @@ class _FilterViewState extends State<FilterView> {
     );
   }
 
-  // أزرار الفلترة بالوقت
+  
   Widget _buildTimeFilters() {
     List<String> times = ["Today", "Tomorrow", "This Week"];
     return Row(
@@ -162,7 +160,7 @@ class _FilterViewState extends State<FilterView> {
     );
   }
 
-  // اختيار الموقع
+  
   Widget _buildLocationSelector() {
     return Container(
       padding: const EdgeInsets.all(16),
@@ -186,7 +184,7 @@ class _FilterViewState extends State<FilterView> {
     );
   }
 
-  // السلايدر الخاص بالسعر
+  
   Widget _buildPriceSlider() {
     return RangeSlider(
       values: _currentRangeValues,
@@ -204,7 +202,7 @@ class _FilterViewState extends State<FilterView> {
     );
   }
 
-  // أزرار Reset و Apply
+  
   Widget _buildActionButtons() {
     return Row(
       children: [

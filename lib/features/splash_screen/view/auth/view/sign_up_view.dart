@@ -3,8 +3,6 @@ import 'package:event_hub_app/core/utils/app_colors.dart';
 import 'package:event_hub_app/core/utils/widgets/custom_main_button.dart';
 import 'package:event_hub_app/core/utils/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
-
-// تأكدي أن المسار هنا صحيح لملف الـ VerificationView
 import 'verification_view.dart'; 
 
 class SignUpView extends StatelessWidget {
@@ -17,7 +15,6 @@ class SignUpView extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-        // تفعيل سهم الرجوع للعودة لصفحة الـ Sign In
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () {
@@ -40,22 +37,16 @@ class SignUpView extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 20),
-              
-              // 1. حقل الاسم الكامل
               CustomTextField(
                 hintText: 'Full name',
                 prefixImageIcon: AppAssets.userIcon, 
               ),
               const SizedBox(height: 20),
-
-              // 2. حقل الإيميل
               CustomTextField(
                 hintText: 'abc@email.com',
                 prefixImageIcon: AppAssets.emailIcon,
               ),
               const SizedBox(height: 20),
-
-              // 3. حقل الباسورد
               CustomTextField(
                 hintText: 'Your password',
                 prefixImageIcon: AppAssets.lockIcon,
@@ -63,8 +54,6 @@ class SignUpView extends StatelessWidget {
                 suffixIcon: const Icon(Icons.visibility_off_outlined, color: Colors.grey),
               ),
               const SizedBox(height: 20),
-
-              // 4. حقل تأكيد الباسورد
               CustomTextField(
                 hintText: 'Confirm password',
                 prefixImageIcon: AppAssets.lockIcon,
@@ -73,12 +62,10 @@ class SignUpView extends StatelessWidget {
               ),
               const SizedBox(height: 40),
 
-              // 5. زرار SIGN UP - تم تفعيل الربط هنا
               CustomMainButton(
                 text: 'SIGN UP',
                 hasIcon: true,
                 onPressed: () {
-                  // هذا الكود هو المسؤول عن الانتقال لصفحة التحقق
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => const VerificationView()),
@@ -94,21 +81,21 @@ class SignUpView extends StatelessWidget {
               ),
               const SizedBox(height: 20),
 
-              // 6. أزرار السوشيال ميديا
+             
               _buildSocialButton('Login with Google', AppAssets.googleIcon),
               const SizedBox(height: 15),
               _buildSocialButton('Login with Facebook', AppAssets.facebookIcon),
               
               const SizedBox(height: 25),
 
-              // 7. الرابط الأخير للرجوع للـ Sign In
+              
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Text("Already have an account? "),
                   GestureDetector(
                     onTap: () {
-                      // الرجوع للخلف لصفحة الـ Sign In
+                      
                       Navigator.pop(context);
                     },
                     child: const Text(

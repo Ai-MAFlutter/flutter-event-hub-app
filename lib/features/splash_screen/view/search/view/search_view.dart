@@ -26,13 +26,13 @@ class SearchView extends StatelessWidget {
       ),
       body: Column(
         children: [
-          // شريط البحث والفلتر
+          
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
             child: _buildSearchHeader(),
           ),
 
-          // قائمة الفعاليات
+          
           Expanded(
             child: ListView(
               padding: const EdgeInsets.symmetric(horizontal: 20),

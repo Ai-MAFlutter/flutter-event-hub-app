@@ -4,7 +4,7 @@ import 'package:event_hub_app/core/utils/app_assets.dart';
 class SeeAllEventsScreen extends StatelessWidget {
   const SeeAllEventsScreen({super.key});
 
-  // البيانات الـ 6 كاملة ثابتة جوه الصفحة
+  
   final List<Map<String, dynamic>> staticEvents = const [
     {
       "title": "Jo Malone London’s Mother’s Day Presents",
@@ -94,7 +94,7 @@ class SeeAllEventsScreen extends StatelessWidget {
             ),
             child: Row(
               children: [
-                // الصورة
+               
                 ClipRRect(
                   borderRadius: BorderRadius.circular(12),
                   child: Image.asset(
@@ -105,7 +105,7 @@ class SeeAllEventsScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(width: 14),
-                // المعلومات
+               
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,

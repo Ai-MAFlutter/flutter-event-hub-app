@@ -4,10 +4,8 @@ import 'package:event_hub_app/core/utils/widgets/custom_main_button.dart';
 import 'package:event_hub_app/core/utils/widgets/custom_text_field.dart';
 import 'package:event_hub_app/features/splash_screen/view/auth/view/reset_password_view.dart';
 import 'package:flutter/material.dart';
-
-// 1. استيراد الصفحات اللي هتروح لها (تأكد من المسارات صحيحة عندك)
 import 'sign_up_view.dart';
-// import 'reset_password_view.dart'; 
+
 
 class SignInView extends StatelessWidget {
   const SignInView({super.key});
@@ -65,7 +63,7 @@ class SignInView extends StatelessWidget {
                   ),
                   TextButton(
                     onPressed: () {
-                      // 2. تفعيل زرار نسيت كلمة المرور
+                     
                        Navigator.push(context, MaterialPageRoute(builder: (context) => const ResetPasswordView()));
                     },
                     child: const Text(
@@ -82,7 +80,7 @@ class SignInView extends StatelessWidget {
                 text: 'SIGN IN',
                 hasIcon: true,
                 onPressed: () {
-                  // هنا يتم وضع كود تسجيل الدخول أو الانتقال للـ Home
+                 
                   print("Sign In Pressed");
                 },
               ),
@@ -102,7 +100,7 @@ class SignInView extends StatelessWidget {
                 children: [
                   const Text("Don’t have an account? "),
                   GestureDetector(
-                    // 3. تفعيل رابط الـ Sign Up
+                    
                     onTap: () {
                       Navigator.push(
                         context,

@@ -8,7 +8,7 @@ class NearbySection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        // 1. الجزء الخاص بالعنوان "Nearby You"
+       
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
           child: Row(
@@ -24,7 +24,7 @@ class NearbySection extends StatelessWidget {
               ),
               GestureDetector(
                 onTap: () {
-                  // الانتقال لصفحة See All
+                  
                 },
                 child: const Row(
                   children: [
@@ -39,18 +39,18 @@ class NearbySection extends StatelessWidget {
 
         const SizedBox(height: 10),
 
-        // 2. كارت دعوة الأصدقاء (Invite Banner)
+        
         Container(
           margin: const EdgeInsets.symmetric(horizontal: 20),
           width: double.infinity,
-          height: 150, // طول الكارت كما في التصميم
+          height: 150, 
           decoration: BoxDecoration(
-            color: const Color(0xFFD7FFFF), // اللون السماوي الفاتح
+            color: const Color(0xFFD7FFFF),
             borderRadius: BorderRadius.circular(15),
           ),
           child: Stack(
             children: [
-              // نصوص الكارت والزرار
+              
               Padding(
                 padding: const EdgeInsets.all(20),
                 child: Column(
@@ -75,11 +75,11 @@ class NearbySection extends StatelessWidget {
                     ),
                     const SizedBox(height: 15),
                     
-                    // تصحيح زر الـ INVITE
+                    
                     ElevatedButton(
                       onPressed: () {},
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color(0xFF00F8FF), // لون الزرار
+                        backgroundColor: const Color(0xFF00F8FF), 
                         elevation: 0,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8),
@@ -99,13 +99,13 @@ class NearbySection extends StatelessWidget {
                 ),
               ),
               
-              // صورة الهدية في أقصى اليمين
+              
               Positioned(
                 right: 0,
                 bottom: 0,
                 top: 0,
                 child: Image.asset(
-                  AppAssets.inviteBannerGift, // تأكدي من الاسم في ملف الـ Assets
+                  AppAssets.inviteBannerGift, 
                   width: 150,
                   fit: BoxFit.contain,
                 ),

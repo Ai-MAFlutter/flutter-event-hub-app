@@ -97,7 +97,7 @@ class _HomeViewState extends State<HomeView> {
                   Text("New York, USA", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 14)),
                 ],
               ),
-              // تعديل الجرس هنا
+              
               GestureDetector(
                 onTap: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) => const NotificationsView()));

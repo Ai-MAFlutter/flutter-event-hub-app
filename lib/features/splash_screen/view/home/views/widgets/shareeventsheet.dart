@@ -16,7 +16,7 @@ class ShareEventSheet extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // شريط السحب العلوي (Handle)
+          
           Center(
             child: Container(
               width: 38,
@@ -38,7 +38,7 @@ class ShareEventSheet extends StatelessWidget {
           ),
           const SizedBox(height: 30),
           
-          // شبكة الأيقونات (2 صف × 4 أعمدة)
+          
           GridView.count(
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
@@ -59,7 +59,7 @@ class ShareEventSheet extends StatelessWidget {
           
           const SizedBox(height: 35),
           
-          // زر CANCEL باللون الرمادي الفاتح جداً
+          
           SizedBox(
             width: double.infinity,
             child: ElevatedButton(
@@ -88,20 +88,19 @@ class ShareEventSheet extends StatelessWidget {
     );
   }
 
-  // ميثود بناء الأيقونة (ممنوع وضع أي "color" هنا لضمان الألوان الأصلية)
+  
   Widget _buildShareItem(String label, String imagePath) {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        // استخدام Container بدلاً من CircleAvatar لتجنب تغيير الخلفية أو اللون
+        
         SizedBox(
           width: 58,
           height: 58,
           child: Image.asset(
             imagePath,
-            // تأكدي أن الصورة في AppAssets هي الصورة الملونة الأصلية
             fit: BoxFit.contain,
-            // هام جداً: لا تكتبي سطر color: هنا
+            
           ),
         ),
         const SizedBox(height: 10),
@@ -110,7 +109,7 @@ class ShareEventSheet extends StatelessWidget {
           textAlign: TextAlign.center,
           style: const TextStyle(
             fontSize: 13,
-            color: Color(0xFF747688), // لون النص الرمادي الهادئ
+            color: Color(0xFF747688), 
             fontWeight: FontWeight.w400,
           ),
         ),

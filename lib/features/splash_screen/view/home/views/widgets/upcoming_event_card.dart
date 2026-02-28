@@ -57,7 +57,7 @@ class UpcomingEventCard extends StatelessWidget {
                 child: Container(
                   padding: const EdgeInsets.all(6),
                   decoration: BoxDecoration(color: Colors.white.withOpacity(0.8), borderRadius: BorderRadius.circular(10)),
-                  // استخدام bookmarkIcons كما في كلاس الأصول الخاص بكِ
+                 
                   child: Image.asset(AppAssets.bookmarkIcons, width: 20, color: const Color(0xFFF0635A)),
                 ),
               ),
@@ -76,12 +76,12 @@ class UpcomingEventCard extends StatelessWidget {
           const SizedBox(height: 8),
           Row(
             children: [
-              // استبدال الأيقونة الجاهزة بصورة أيقونة الموقع من الفيجما
+              
               Image.asset(
                 AppAssets.locationmarker, 
-                width: 16, // نفس الحجم تقريباً
+                width: 16, 
                 height: 16,
-                color: Colors.grey, // الحفاظ على اللون الرمادي للنص والأيقونة
+                color: Colors.grey, 
               ),
               const SizedBox(width: 5),
               const Expanded(

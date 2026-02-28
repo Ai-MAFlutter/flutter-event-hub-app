@@ -12,25 +12,25 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   int _currentIndex = 0;
 
-  // القائمة التي تحتوي على الصفحات الفعلية في مشروعك
+  
   final List<Widget> _pages = [
-    const HomeView(),           // Index 0: Explore
-    const Center(child: Text("Events Page")), // Index 1: Events
-    const MapView(),            // Index 2: Map
-    const Center(child: Text("Profile Page")), // Index 3: Profile
+    const HomeView(),           
+    const Center(child: Text("Events Page")), 
+    const MapView(),            
+    const Center(child: Text("Profile Page")), 
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // لضمان ظهور المحتوى بشكل كامل خلف الـ Bar
+      
       extendBody: true, 
       body: _pages[_currentIndex == 2 || _currentIndex == 3 ? _currentIndex : _currentIndex],
       
-      // 1. زر الزائد (+) الكبير في المنتصف
+      
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // كود إضافة فعالية جديدة
+          
         },
         backgroundColor: const Color(0xFF5669FF),
         shape: const CircleBorder(),
@@ -38,9 +38,9 @@ class _MainScreenState extends State<MainScreen> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
 
-      // 2. شريط التنقل السفلي
+     
       bottomNavigationBar: BottomAppBar(
-        shape: const CircularNotchedRectangle(), // لعمل الفتحة تحت زر الزائد
+        shape: const CircularNotchedRectangle(), 
         notchMargin: 8.0,
         clipBehavior: Clip.antiAlias,
         child: SizedBox(
@@ -48,7 +48,7 @@ class _MainScreenState extends State<MainScreen> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              // الجزء الأيسر (Explore & Events)
+              
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -56,7 +56,7 @@ class _MainScreenState extends State<MainScreen> {
                   _buildNavItem(1, Icons.calendar_month_outlined, "Events"),
                 ],
               ),
-              // الجزء الأيمن (Map & Profile)
+              
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -71,7 +71,7 @@ class _MainScreenState extends State<MainScreen> {
     );
   }
 
-  // دالة بناء عناصر التنقل لجعل الكود أنظف
+  
   Widget _buildNavItem(int index, IconData icon, String label) {
     bool isSelected = _currentIndex == index;
     return MaterialButton(

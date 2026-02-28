@@ -2,7 +2,7 @@ import 'package:event_hub_app/features/splash_screen/view/home/views/widgets/Inv
 import 'package:event_hub_app/features/splash_screen/view/home/views/widgets/shareeventsheet.dart';
 import 'package:flutter/material.dart';
 import 'package:event_hub_app/core/utils/app_assets.dart';
-// تأكدي من عمل import لملفات الـ Sheets التي أنشأناها سابقاً
+
 
 class EventDetailsView extends StatelessWidget {
   const EventDetailsView({super.key});
@@ -13,7 +13,7 @@ class EventDetailsView extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Stack(
         children: [
-          // المحتوى القابل للتمرير
+          
           SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -24,7 +24,7 @@ class EventDetailsView extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const SizedBox(height: 50), // مساحة للكارت الأبيض المرتفع
+                      const SizedBox(height: 50), 
                       const Text(
                         "International Band Music Concert",
                         style: TextStyle(
@@ -35,21 +35,21 @@ class EventDetailsView extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(height: 25),
-                      // صف التاريخ والوقت
+                      
                       _buildDetailRow(
                         AppAssets.calendarIcon,
                         "14 December, 2021",
                         "Tuesday, 4:00PM - 9:00PM",
                       ),
                       const SizedBox(height: 20),
-                      // صف الموقع
+                      
                       _buildDetailRow(
                         AppAssets.locationmarker,
                         "Gala Convention Center",
                         "36 Guild Street London, UK",
                       ),
                       const SizedBox(height: 20),
-                      // صف المنظم
+                      
                       _buildOrganizerRow(),
                       const SizedBox(height: 30),
                       const Text(
@@ -69,14 +69,14 @@ class EventDetailsView extends StatelessWidget {
                           height: 1.6,
                         ),
                       ),
-                      const SizedBox(height: 120), // مساحة للزر السفلي
+                      const SizedBox(height: 120), 
                     ],
                   ),
                 ),
               ],
             ),
           ),
-          // الطبقات الثابتة فوق المحتوى
+          
           _buildTopBar(context),
           _buildBuyTicketButton(),
         ],
@@ -84,7 +84,7 @@ class EventDetailsView extends StatelessWidget {
     );
   }
 
-  // ميثود بناء صفوف التفاصيل (تاريخ وموقع)
+  
   Widget _buildDetailRow(String iconPath, String title, String subtitle) {
     return Row(
       children: [
@@ -126,7 +126,7 @@ class EventDetailsView extends StatelessWidget {
     );
   }
 
-  // الجزء الخاص بالمنظم (Organizer)
+  
   Widget _buildOrganizerRow() {
     return Row(
       children: [
@@ -176,7 +176,7 @@ class EventDetailsView extends StatelessWidget {
           height: 240,
           fit: BoxFit.cover,
         ),
-        // كارت الأشخاص (20+ Going)
+        
         Positioned(
           bottom: -25,
           left: 45,
@@ -210,7 +210,7 @@ class EventDetailsView extends StatelessWidget {
                 const Spacer(),
                 ElevatedButton(
                   onPressed: () {
-                    // تم إضافة كود الـ Invite هنا
+                    
                     showModalBottomSheet(
                       context: context,
                       isScrollControlled: true,
@@ -295,7 +295,7 @@ class EventDetailsView extends StatelessWidget {
               style: TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.w500),
             ),
             const Spacer(),
-            // تم إضافة كود الـ Share عند الضغط على أيقونة الـ Bookmark
+            
             GestureDetector(
               onTap: () {
                 showModalBottomSheet(

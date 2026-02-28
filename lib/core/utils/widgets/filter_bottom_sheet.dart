@@ -29,7 +29,6 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(height: 15),
-              // Handle العلوي من فيجما (غالباً يكون رمادي فاتح جداً)
               Center(
                 child: Container(
                   width: 40,
@@ -51,12 +50,9 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
               ),
               const SizedBox(height: 25),
 
-              // 1. التصنيفات الدائرية (تستخدم أيقونات فيجما)
               _buildCategoriesList(),
 
               const SizedBox(height: 30),
-
-              // 2. الوقت والتاريخ
               _buildSectionTitle("Time & Date"),
               const SizedBox(height: 15),
               _buildTimeSelector(),
@@ -64,15 +60,11 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
               _buildCalendarPicker(),
 
               const SizedBox(height: 30),
-
-              // 3. الموقع (تغيير أيقونة الموقع والأسهم لأيقونات فيجما)
               _buildSectionTitle("Location"),
               const SizedBox(height: 15),
               _buildLocationField(),
 
               const SizedBox(height: 30),
-
-              // 4. السعر
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -91,8 +83,6 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
               _buildPriceSlider(),
 
               const SizedBox(height: 40),
-
-              // 5. الأزرار RESET و APPLY
               _buildFooterButtons(),
               const SizedBox(height: 20),
             ],
@@ -114,11 +104,10 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
   }
 
   Widget _buildCategoriesList() {
-    // مصفوفة البيانات باستخدام أيقونات فيجما من AppAssets
     List<Map<String, dynamic>> categories = [
       {"name": "Sports", "icon": AppAssets.sports, "color": const Color(0xFF5669FF)},
       {"name": "Music", "icon": AppAssets.music, "color": const Color(0xFFF59762)},
-      {"name": "Art", "icon": AppAssets.sports, "color": const Color(0xFF46CDFB)}, // تأكدي من مسار Art في فيجما
+      {"name": "Art", "icon": AppAssets.sports, "color": const Color(0xFF46CDFB)}, 
       {"name": "Food", "icon": AppAssets.food, "color": const Color(0xFF29D697)},
     ];
 
@@ -208,7 +197,6 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
       ),
       child: Row(
         children: [
-          // أيقونة التقويم من فيجما
           Image.asset(AppAssets.calendarIcon, width: 22), 
           const SizedBox(width: 12),
           const Text(
@@ -216,7 +204,6 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
             style: TextStyle(color: Color(0xFF120D26), fontSize: 16)
           ),
           const Spacer(),
-          // استبدال Icon بـ Image لو عندك سهم فيجما (أو استمراري على Icon لو مطابق)
           const Icon(Icons.arrow_forward_ios, size: 14, color: Colors.grey),
         ],
       ),
@@ -238,7 +225,6 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
               color: const Color(0xFFE6E9FF), 
               borderRadius: BorderRadius.circular(10)
             ),
-            // أيقونة الموقع الزرقاء من فيجما
             child: Image.asset(AppAssets.locationmarker, width: 20, color: const Color(0xFF5669FF)),
           ),
           const SizedBox(width: 15),
@@ -256,7 +242,7 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
   Widget _buildPriceSlider() {
     return Column(
       children: [
-        // الرسم البياني للسعر من فيجما
+        
         Image.asset(
           AppAssets.pricegraph, 
           width: double.infinity, 
